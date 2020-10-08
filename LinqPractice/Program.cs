@@ -65,10 +65,16 @@ namespace LinqPractice
                 411,487,600,702,177,829,810,371,932,262,
                 286,467,834,303,842,544,659,738,431,458
             };
+
+            //distinct all the numbers if there are doubles
+            //All used to see if all numbers are even or odd or statisfys some other condition(bool)
+
+            //sum of numbers divisible by 3 and 7
             var sumdiv37 = nbrs.Where(n => n % 3 == 0 || n % 7 == 0).Sum();
             sumdiv37 = (from n in nbrs
                        where n % 3 == 0 || n % 7 == 0
                        select n).Sum();
+            //average of the numbers greater than or equal to 500
             var avgGE500 = (from n in nbrs
                            where n >= 500
                            select n).Average();
@@ -89,6 +95,7 @@ namespace LinqPractice
                       where e <= 11
                       select e).Average();
 
+            //methods examples
             var max = ints.Max();
             var min = ints.Min();
             var sum = ints.Sum();
